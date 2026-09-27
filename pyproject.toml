@@ -1,0 +1,26 @@
+[project]
+name = "pipeline-farmaceutico"
+version = "0.1.0"
+description = "Pipeline asíncrono de scraping para las 10 farmacéuticas más grandes en stockanalysis.com"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "beautifulsoup4>=4.12",
+    "playwright>=1.63.0",
+]
+
+[project.scripts]
+pipeline-farmaceutico = "pipeline_farmaceutico.consola:principal"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.24",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.19,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
